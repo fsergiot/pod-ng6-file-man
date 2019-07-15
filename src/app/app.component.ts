@@ -9,23 +9,23 @@ import {ConfigInterface, NodeInterface, TreeModel} from 'ng6-file-man';
 export class AppComponent {
   tree: TreeModel;
   node: NodeInterface;
-  appLanguage = 'es';
+  appLanguage = 'en';
 
   constructor() {
     const treeConfig: ConfigInterface = {
       baseURL: 'http://localhost:8080/',
       api: {
-        listFile: 'api/files/list',
-        uploadFile: 'api/files/upload',
-        downloadFile: 'api/files/download',
-        deleteFile: 'api/files/remove',
-        createFolder: 'api/files/directory',
-        renameFile: 'api/files/rename',
-        searchFiles: 'api/files/search'
+        listFile: 'api/list',
+        uploadFile: 'api/upload',
+        downloadFile: 'api/download',
+        deleteFile: 'api/remove',
+        createFolder: 'api/directory',
+        renameFile: 'api/rename',
+        searchFiles: 'api/search'
       },
       options: {
-        allowFolderDownload: false,
-        showFilesInsideTree: false
+        allowFolderDownload: true,
+        showFilesInsideTree: true
       }
     };
 
@@ -35,6 +35,6 @@ export class AppComponent {
 
   // noinspection JSUnusedLocalSymbols
   itemClicked(event: any) {
-    // console.log(event);
+    console.log(event);
   }
 }
